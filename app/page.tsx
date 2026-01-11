@@ -1,11 +1,25 @@
-import Image from "next/image";
+"use client";
+import ProductCard from "@/components/product-card";
+import { useEffect, useState } from "react";
 
-export default function Home() {
+const Home = () => {
+  const [products, setProducts] = useState([]);
+  const fetchData = async () => {
+    const res = await fetch("https://api.escuelajs.co/api/v1/products");
+    const data = await res.json();
+    setProducts(data);
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        This is Homepage
-      </main>
+    <div className="flex flex-wrap flex-row">
+      {products.map((item, id) => (
+        <ProductCard key={item.id} id={item.id} item={item} />
+      ))}
     </div>
   );
-}
+};
+
+export default Home;
