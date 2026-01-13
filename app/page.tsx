@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const Home = () => {
   const [products, setProducts] = useState([]);
   const fetchData = async () => {
-    const res = await fetch("https://api.escuelajs.co/api/v1/products");
+    const res = await fetch("https://fakestoreapi.com/products");
     const data = await res.json();
     setProducts(data);
   };
@@ -14,12 +14,19 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="flex flex-wrap flex-row">
+    <div className="flex flex-row flex-wrap justify-around gap-y-10">
       {products.map((item, id) => (
-        <ProductCard key={item.id} id={item.id} item={item} />
+        <ProductCard key={item.id} item={item} />
       ))}
     </div>
   );
 };
 
 export default Home;
+// import React from "react";
+
+// const Home = () => {
+//   return <div></div>;
+// };
+
+// export default Home;

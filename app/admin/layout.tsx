@@ -1,14 +1,16 @@
 import { AppSidebar } from "@/components/app-sidebar";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 
-const Dashboard = ({ children }) => {
+export async function Dashboard({ children }: { children: React.ReactNode }) {
   return (
-    <SidebarProvider>
-      <AppSidebar />
-      <SidebarTrigger />
-      {children}
-    </SidebarProvider>
+    <div>
+      <SidebarProvider>
+        <AppSidebar />
+        <SidebarTrigger />
+        {children}
+      </SidebarProvider>
+    </div>
   );
-};
+}
 
 export default Dashboard;
