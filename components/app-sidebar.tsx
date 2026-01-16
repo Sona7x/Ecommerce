@@ -16,18 +16,30 @@ import {
 // Menu items.
 const items = [
   {
-    title: "Orders",
-    url: "/admin/order",
+    title: "Dashboard",
+    url: "/admin/dashboard",
     icon: FaBorderTopLeft,
-  },
-  {
-    title: "Categories",
-    url: "/admin/category",
-    icon: TbCategory,
   },
   {
     title: "Products",
     url: "/admin/product",
+    icon: TbCategory,
+  },
+  {
+    title: "Orders",
+    url: "/admin/order",
+    icon: MdProductionQuantityLimits,
+  },
+  ,
+  {
+    title: "User",
+    url: "/admin/user",
+    icon: MdProductionQuantityLimits,
+  },
+  ,
+  {
+    title: "Settings",
+    url: "/admin/settings",
     icon: MdProductionQuantityLimits,
   },
 ];

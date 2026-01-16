@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Roboto } from "next/font/google";
 import "./globals.css";
-import NavMenu from "@/components/nav-menu";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
+import ClientLayout from "./client-layout";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -24,20 +22,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" className={`${inter.variable} ${roboto.variable}`}>
       <body className="font-sans antialiased">
-        <SidebarProvider>
-          <AppSidebar />
-          <SidebarTrigger />
-          <main>
-            <NavMenu />
-            <section className="mt-10">{children}</section>
-          </main>
-        </SidebarProvider>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );

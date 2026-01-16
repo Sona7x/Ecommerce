@@ -13,7 +13,7 @@ const buttonVariants = cva(
           "bg-pink-500 text-white hover:bg-pink-600 focus-visible:ring-pink-200",
 
         destructive:
-          "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
+          "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60 !p-0 !h-8 !w-8",
 
         outline:
           "border border-pink-500 bg-white text-pink-500 hover:bg-pink-100 hover:text-pink-600 font-semibold focus-visible:ring-pink-200",
@@ -22,7 +22,7 @@ const buttonVariants = cva(
 
         ghost: "hover:bg-pink-50 hover:text-pink-600",
 
-        link: "text-pink-500 underline-offset-4 hover:underline hover:text-pink-600",
+        link: "text-pink-500 underline-offset-4 hover:underline hover:text-pink-600 !p-0",
       },
       size: {
         default: "h-9 px-5 py-2 has-[>svg]:px-3",

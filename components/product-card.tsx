@@ -38,7 +38,12 @@ const ProductCard = (props) => {
           <span className="font-semibold text-pink-800 text-sm">
             {props.item.price} $
           </span>
-          <Button variant="outline">View Product</Button>
+          <Button
+            onClick={() => router.push("/product/" + props.item.id)}
+            variant="outline"
+          >
+            View Product
+          </Button>
         </div>
       </div>
     </div>

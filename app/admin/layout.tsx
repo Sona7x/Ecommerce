@@ -7,7 +7,9 @@ export async function Dashboard({ children }: { children: React.ReactNode }) {
       <SidebarProvider>
         <AppSidebar />
         <SidebarTrigger />
-        {children}
+        <main className="w-full">
+          <section className="pt-10 h-[calc(100%-36px)]">{children}</section>
+        </main>
       </SidebarProvider>
     </div>
   );
